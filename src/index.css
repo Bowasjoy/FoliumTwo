@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Syne", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "Space Grotesk", monospace, monospace;
+  
+  --color-obsidian-950: #040906;
+  --color-obsidian-900: #07120c;
+  --color-obsidian-850: #0c1c14;
+  
+  --color-forest-950: #091710;
+  --color-forest-900: #0f241a;
+  --color-forest-800: #142a1f;
+  --color-forest-700: #1a3829;
+  --color-forest-600: #234d38;
+
+  --color-emerald-neon: #10b981;
+  --color-emerald-glow: #34d399;
+  --color-emerald-deep: #059669;
+
+  --color-ivory-50: #faf8f5;
+  --color-ivory-100: #f5f0e6;
+  --color-ivory-200: #eee6d8;
+  --color-ivory-300: #e0d5c1;
+
+  --color-gold-300: #f1dfb8;
+  --color-gold-400: #e5ca7a;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #c8a966;
+  --color-gold-700: #957434;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #07120c;
+  color: #faf8f5;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Subtle glow effects */
+.glow-emerald {
+  filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.35));
+}
+
+.glow-gold {
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
+}
+
+/* Marquee for technology strip */
+@keyframes techTicker {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-tech-ticker {
+  display: flex;
+  width: max-content;
+  animation: techTicker 25s linear infinite;
+}
+
+.animate-tech-ticker:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-tech-ticker {
+    animation: none !important;
+  }
+}
+
